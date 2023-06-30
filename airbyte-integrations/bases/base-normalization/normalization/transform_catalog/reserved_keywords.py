@@ -2539,9 +2539,13 @@ MSSQL = {
     "REGR_SYY",
 }
 
-# In ClickHouse, keywords are not reserved.
-# Ref: https://clickhouse.com/docs/en/sql-reference/syntax/#syntax-keywords
-CLICKHOUSE: Set[str] = set()
+# In ClickHouse, keywords are not reserved. 
+# Ref: https://clickhouse.com/docs/en/sql-reference/syntax#keywords
+# However, an unquoted "FROM" column cannot be present in a SELECT statement in versions >= 23.4  
+# Ref: https://github.com/ClickHouse/ClickHouse/pull/48438
+CLICKHOUSE = {
+    "FROM",
+}
 
 # https://docs.pingcap.com/tidb/stable/keywords#keywords
 TIDB = {
