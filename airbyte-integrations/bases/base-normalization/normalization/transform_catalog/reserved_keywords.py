@@ -2541,7 +2541,9 @@ MSSQL = {
 
 # In ClickHouse, keywords are not reserved.
 # Ref: https://clickhouse.com/docs/en/sql-reference/syntax/#syntax-keywords
-CLICKHOUSE: Set[str] = set()
+CLICKHOUSE: Set[str] = {
+    "FROM",
+}
 
 # https://docs.pingcap.com/tidb/stable/keywords#keywords
 TIDB = {
